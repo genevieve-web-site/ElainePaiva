@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  /* Aqui definimos as cores da sua paleta para a v4 */
+  --color-brand-light: #e8d9c5;
+  --color-brand: #b09980;
+  --color-brand-dark: #1a1a1a;
+  --color-brand-accent: #8c7662;
+}
+
+@layer base {
+  body {
+    /* No v4, você usa a variável definida acima */
+    @apply bg-[#F9F7F4] text-brand-dark antialiased;
+    font-family: "Inter", sans-serif;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
