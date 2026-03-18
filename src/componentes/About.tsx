@@ -1,6 +1,6 @@
 import React from "react";
 
-import IMGAbout from "../assets/elaine/frenteElaine.jpg";
+import IMGAbout from "../assets/elaine/frente-elaine.jpg";
 
 const HeroEditorial = () => {
   return (
