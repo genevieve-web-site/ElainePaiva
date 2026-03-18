@@ -61,16 +61,16 @@ const Header = () => {
           </div>
 
           {/* Direita: Redes + Idioma */}
-          <div className="flex items-center justify-end gap-5 flex-1">
+          <div className="flex items-center justify-end gap-2 md:gap-5 flex-1">
             <a
               href="#"
-              className="text-gray-800 hover:text-brand transition-colors"
+              className="hidden md:inline-flex text-gray-800 hover:text-brand transition-colors"
             >
               <Instagram className="w-5 h-5" strokeWidth={1.5} />
             </a>
             <a
               href="#"
-              className="text-gray-800 hover:text-brand transition-colors"
+              className="hidden md:inline-flex text-gray-800 hover:text-brand transition-colors"
             >
               <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
             </a>
@@ -79,7 +79,7 @@ const Header = () => {
             <div className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="hidden sm:flex items-center gap-2 text-[11px] tracking-[2px] uppercase font-light text-gray-700 cursor-pointer ml-2 hover:text-brand transition-colors outline-none bg-transparent border-none"
+                className="flex items-center gap-2 text-[11px] tracking-[2px] uppercase font-light text-gray-700 cursor-pointer ml-2 hover:text-brand transition-colors outline-none bg-transparent border-none"
               >
                 {/* Aqui pegamos a flag do idioma atual */}
                 <span className="text-base">
@@ -160,6 +160,23 @@ const Header = () => {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-12 pt-8 border-t border-gray-100 flex items-center gap-6 md:hidden">
+              <a
+                href="#"
+                className="text-gray-800 hover:text-brand transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" strokeWidth={1.5} />
+              </a>
+              <a
+                href="#"
+                className="text-gray-800 hover:text-brand transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
+              </a>
+            </div>
           </div>
         </div>
       </div>
