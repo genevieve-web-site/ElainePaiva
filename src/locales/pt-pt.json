@@ -1,0 +1,105 @@
+{
+  "header": {
+    "menuButton": "Menu",
+    "topNavTechniques": "Técnicas",
+    "topNavContact": "Contacto",
+    "drawerTitle": "Navegação",
+    "menuItems": [
+      { "id": "sobre", "label": "Sobre" },
+      { "id": "alisamentos", "label": "Alisamentos" },
+      { "id": "agendamento", "label": "Marcação" }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Luxury Hair & Care",
+    "titleLine": "O Efeito",
+    "titleHighlight": "espelhado",
+    "description": "Alisamentos profissionais que alinham os fios, eliminam o frizz e entregam brilho intenso sem comprometer a saúde do cabelo.",
+    "cta": "Falar com Elaine",
+    "imageAlt": "Trabalho de Alisamento",
+    "collectionLabel": "Editorial Collection 2026"
+  },
+  "latest": {
+    "titleStart": "Resultados",
+    "titleHighlight": "recentes",
+    "viewAll": "Ver todos",
+    "articles": [
+      {
+        "category": "Alisamentos",
+        "title": "O Segredo do Brilho Espelhado: Técnica Espelhado"
+      },
+      {
+        "category": "Cuidados",
+        "title": "Cronograma Capilar para Cabelos Quimicamente Tratados"
+      },
+      {
+        "category": "Produtos",
+        "title": "Top 5 Produtos para Manutenção do Alisamento em Casa"
+      }
+    ],
+    "bookingTitle": "Marque o seu horário",
+    "bookingHighlight": "Agora",
+    "bookingSubtitle": "Experiência exclusiva • Atendimento personalizado • Brilho espelhado",
+    "bookingCta": "Falar com Elaine no WhatsApp",
+    "bookingResponse": "Resposta imediata em horário comercial"
+  },
+  "blog": {
+    "readArticle": "Ler mais",
+    "posts": [
+      {
+        "category": "Notícia principal",
+        "title": "Elaine vira tema em jornal brasileiro, ganha prêmio na europa."
+      },
+      {
+        "category": "Reconhecimento• Premiação",
+        "title": "Especialista em Alisamentos: Elaine Paiva vence prêmio com mais de 40% dos votos."
+      },
+      {
+        "category": "Expansão e Formação na Europa",
+        "title": "Formações Internacionais: A técnica do Liso Espelhado chega a Luxemburgo, França e Bélgica."
+      },
+      {
+        "category": "O Diferencial Técnico (O Método)",
+        "title": "Liso Espelhado: O segredo por trás do brilho intenso e da saúde capilar."
+      }
+    ]
+  },
+  "alisamentos": {
+    "sectionTitle": "ALISAMENTOS",
+    "prevLabel": "Anterior",
+    "nextLabel": "Seguinte"
+  },
+  "about": {
+    "category": "sobre Elaine",
+    "title": "A ESPECIALISTA POR TRÁS DOS LISOS PERFEITOS",
+    "description": "Com anos de experiência no universo da beleza, Elaine Paiva se tornou referência em alisamentos...",
+    "continueReading": "Continuar a ler",
+    "pageTitle": "Sobre Elaine Paiva",
+    "pageIntro": "Bem-vindo à página sobre!",
+    "storyTitle": "Nossa História",
+    "storyParagraph1": "Com mais de uma década...",
+    "storyParagraph2": "Nossa missão é...",
+    "specialtiesTitle": "Especialidades",
+    "specialty1": "Alisamento Espelhado",
+    "specialty2": "Cronograma",
+    "specialty3": "Reconstrução",
+    "specialty4": "Consultoria",
+    "valuesTitle": "Valores",
+    "valuesText": "Acreditamos na excelência.",
+    "ctaTitle": "Agende Agora",
+    "ctaText": "Fale connosco.",
+    "ctaButton": "WhatsApp"
+  },
+  "insta": {
+    "title": "Instagram",
+    "viewAllVideos": "Ver vídeos",
+    "videoTag": "Vídeo",
+    "videos": ["EP 12", "EP 11", "EP 10"]
+  },
+  "footer": {
+    "address": "Rua de Costa Cabral 151 Porto Portugal",
+    "phone": "+351 912 345 678",
+    "rightsOwner": "Genevieve",
+    "rightsText": "Todos os direitos reservados."
+  }
+}

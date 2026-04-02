@@ -1,56 +1,56 @@
 import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import image1 from "../assets/servicos/1.jpg";
-import image2 from "../assets/servicos/2.jpg";
-import image3 from "../assets/servicos/3.jpg";
-import image4 from "../assets/servicos/4.jpg";
-import image5 from "../assets/servicos/resultado1.jpg";
-import image6 from "../assets/servicos/resultado2.jpg";
-import image7 from "../assets/servicos/resultado3.jpg";
-import image8 from "../assets/servicos/1.jpg";
-import image9 from "../assets/servicos/resultado1.jpg";
+import { useLanguage } from "../context/useLanguage";
+
+const image1 = new URL("../assets/servicos/1.jpg", import.meta.url).href;
+const image2 = new URL("../assets/servicos/2.jpg", import.meta.url).href;
+const image3 = new URL("../assets/servicos/3.jpg", import.meta.url).href;
+const image4 = new URL("../assets/servicos/4.jpg", import.meta.url).href;
+const image5 = new URL("../assets/servicos/resultado1.jpg", import.meta.url)
+  .href;
+const image6 = new URL("../assets/servicos/resultado2.jpg", import.meta.url)
+  .href;
+const image7 = new URL("../assets/servicos/resultado3.jpg", import.meta.url)
+  .href;
+const image8 = new URL("../assets/servicos/1.jpg", import.meta.url).href;
+const image9 = new URL("../assets/servicos/resultado1.jpg", import.meta.url)
+  .href;
 
 const alisamentosData = [
   {
     id: 1,
-    cat: "BELEZA",
-    sub: "TENDÊNCIA",
-    title:
-      "o alisamento perfeito: guia completo para cabelos lisos e saudáveis",
+    cat: "ESPELHADO",
+    title: " Brilho perfeito",
     img: image1,
   },
   {
     id: 2,
-    cat: "BELEZA",
-    sub: "TÉCNICA",
-    title: "tecnica profissinal e cuidados da raiz a ponta",
+    cat: "ALISAMENTO",
+
+    title: "Profissionalismo e técnica avançada. ",
     img: image2,
   },
   {
     id: 3,
-    cat: "DICAS",
-    sub: "BELEZA",
-    title: "BRILHO E MACIEZ: OS MELHORES PRODUTOS PARA ALISAMENTOS",
+    cat: "Tratamentos",
+    title: "Todo brilho e saúde que seu cabelo merece.",
     img: image3,
   },
   {
     id: 4,
-    cat: "BELEZA",
-    sub: "CUIDADOS",
+    cat: "CUIDADOS",
     title: "CRONOGRAMA CAPILAR PÓS-QUÍMICA",
     img: image4,
   },
   {
     id: 5,
-    cat: "BELEZA",
-    sub: "CABELO",
+    cat: "SAÚDE CAPILAR",
     title: "O SEGREDO DO BRILHO ESPELHADO",
     img: image5,
   },
   {
     id: 6,
-    cat: "MODA",
-    sub: "PRODUTOS",
+    cat: "PRODUTOS",
     title: "PRODUTOS DE ALTA QUALIDADE PARA UM ALISAMENTO DURADOURO",
     img: image6,
   },
@@ -79,6 +79,7 @@ const alisamentosData = [
 
 const AlisamentosSlider = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -90,18 +91,21 @@ const AlisamentosSlider = () => {
   };
 
   return (
-    <section className="py-12 px-4 md:px-6 max-w-[1440px] mx-auto overflow-hidden">
+    <section
+      id="alisamentos"
+      className="py-12 px-4 md:px-6 max-w-[1440px] mx-auto overflow-hidden"
+    >
       {/* Header com Título e Setas */}
       <div className="flex justify-between items-end mb-8 border-b border-[#eee] pb-6">
         <h2 className="text-4xl font-serif text-[#8B4343]  uppercase font-light text-brand block">
-          ALISAMENTOS
+          {t.alisamentos.sectionTitle}
         </h2>
 
         <div className="flex gap-6 pb-2">
           <button
             onClick={() => scroll("left")}
             className="cursor-pointer hover:opacity-50 transition-opacity"
-            aria-label="Anterior"
+            aria-label={t.alisamentos.prevLabel}
           >
             <svg width="60" height="12" viewBox="0 0 40 12" fill="none">
               <path
@@ -114,7 +118,7 @@ const AlisamentosSlider = () => {
           <button
             onClick={() => scroll("right")}
             className="cursor-pointer hover:opacity-50 transition-opacity"
-            aria-label="Próximo"
+            aria-label={t.alisamentos.nextLabel}
           >
             <svg width="60" height="12" viewBox="0 0 40 12" fill="none">
               <path
@@ -133,33 +137,33 @@ const AlisamentosSlider = () => {
         className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {alisamentosData.map((item) => (
-          <div
-            key={item.id}
-            className="min-w-[85%] md:min-w-[32%] lg:min-w-[30%] flex flex-col gap-5 snap-start group"
-          >
-            {/* Imagem com Aspect Ratio 4:5 */}
-            <div className="aspect-[4/5] overflow-hidden bg-gray-100">
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-
-            {/* Textos */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-[10px] tracking-[0.2em] font-bold text-[#b5b5b5]">
-                <span className="uppercase">{item.cat}</span>
-                <span className="text-[#8B4343]">•</span>
-                <span className="uppercase">{item.sub}</span>
+        {alisamentosData.map((item) => {
+          return (
+            <div
+              key={item.id}
+              className="min-w-[85%] md:min-w-[32%] lg:min-w-[30%] flex flex-col gap-5 snap-start group"
+            >
+              {/* Imagem com Aspect Ratio 4:5 */}
+              <div className="aspect-[4/5] overflow-hidden bg-gray-100">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
-              <h3 className="text-2xl font-serif leading-[1.1] text-[#1a1a1a] uppercase break-words">
-                {item.title}
-              </h3>
+
+              {/* Textos */}
+              <div className="space-y-3">
+                <div className="text-[10px] tracking-[0.2em] font-bold text-[#b5b5b5] uppercase">
+                  {item.cat}
+                </div>
+                <h3 className="text-2xl font-serif leading-[1.1] text-[#1a1a1a] uppercase break-words">
+                  {item.title}
+                </h3>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

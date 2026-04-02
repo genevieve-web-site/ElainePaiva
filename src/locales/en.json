@@ -1,0 +1,110 @@
+{
+  "header": {
+    "menuButton": "Menu",
+    "topNavTechniques": "Techniques",
+    "topNavContact": "Contact",
+    "drawerTitle": "Navigation",
+    "menuItems": [
+      { "id": "sobre", "label": "About" },
+      { "id": "alisamentos", "label": "Straightening" },
+      { "id": "agendamento", "label": "Booking" }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Luxury Hair & Care",
+    "titleLine": "The",
+    "titleHighlight": "mirror effect",
+    "description": "Professional straightening treatments that align strands, eliminate frizz, and deliver intense shine without compromising hair health.",
+    "cta": "Talk to Elaine",
+    "imageAlt": "Hair Straightening Work",
+    "collectionLabel": "Editorial Collection 2026"
+  },
+  "latest": {
+    "titleStart": "Recent",
+    "titleHighlight": "results",
+    "viewAll": "View all",
+    "articles": [
+      {
+        "category": "Straightening",
+        "title": "The Secret of Mirror Shine: Mirror Technique"
+      },
+      {
+        "category": "Care",
+        "title": "Hair Care Schedule for Chemically Treated Hair"
+      },
+      {
+        "category": "Products",
+        "title": "Top 5 Products for At-Home Straightening Maintenance"
+      }
+    ],
+    "bookingTitle": "Book your appointment",
+    "bookingHighlight": "Now",
+    "bookingSubtitle": "Exclusive experience • Personalized service • Mirror shine",
+    "bookingCta": "Talk to Elaine on WhatsApp",
+    "bookingResponse": "Immediate response during business hours"
+  },
+  "blog": {
+    "readArticle": "Read Article",
+    "posts": [
+      {
+        "category": "Main News",
+        "title": "Elaine featured in Brazilian news, wins award in Europe."
+      },
+      {
+        "category": "Recognition • Award",
+        "title": "Straightening Specialist: Elaine Paiva wins award with over 40% of votes."
+      },
+      {
+        "category": "Expansion in Europe",
+        "title": "International Training: The Mirror Effect technique reaches Luxembourg, France, and Belgium."
+      },
+      {
+        "category": "Technical Method",
+        "title": "Mirror Shine: The secret behind intense shine and hair health."
+      }
+    ]
+  },
+  "alisamentos": {
+    "sectionTitle": "STRAIGHTENING",
+    "prevLabel": "Previous",
+    "nextLabel": "Next"
+  },
+  "about": {
+    "imageAlt": "Elaine Paiva Profile",
+    "category": "about Elaine",
+    "title": "THE SPECIALIST BEHIND PERFECT STRAIGHT HAIR",
+    "description": "With years of experience in the beauty world, Elaine Paiva has become a reference in straightening that combines results and hair health. Leading Dlux Salon, she developed a method focused on...",
+    "continueReading": "Continue reading",
+    "pageTitle": "About Elaine Paiva",
+    "pageIntro": "Welcome to the about page! Here you'll learn more about Elaine Paiva's story, experience, and passion for hair care.",
+    "storyTitle": "Our Story",
+    "storyParagraph1": "With over a decade of experience in professional hair treatments, Elaine Paiva has dedicated her career to hair transformation and care, using modern techniques and high-quality products.",
+    "storyParagraph2": "Our mission is to provide clients not only with more beautiful hair, but also healthier and more resilient hair.",
+    "specialtiesTitle": "Specialties",
+    "specialty1": "Professional straightening with mirror effect",
+    "specialty2": "Personalized hair care schedule",
+    "specialty3": "Hair reconstruction treatments",
+    "specialty4": "At-home care consulting",
+    "valuesTitle": "Values",
+    "valuesText": "We believe every hair type is unique and deserves personalized attention. We are committed to excellence, innovation, and our clients' well-being, always using safe products and approved techniques.",
+    "ctaTitle": "Book Your Consultation",
+    "ctaText": "Want to know more about our services? Contact us and schedule a personalized consultation!",
+    "ctaButton": "Contact us on WhatsApp"
+  },
+  "insta": {
+    "title": "Instagram",
+    "viewAllVideos": "See all videos",
+    "videoTag": "Video",
+    "videos": [
+      "EPISODE 12: TOUR OF BABY COELHO'S ROOM",
+      "EPISODE 11: MOTHERS WHO INSPIRE",
+      "EPISODE 10: TALKING ABOUT THE PAST, PRESENT AND FUTURE."
+    ]
+  },
+  "footer": {
+    "address": "Rua de Costa Cabral 151 Porto Portugal",
+    "phone": "+351 912 345 678",
+    "rightsOwner": "Genevieve",
+    "rightsText": "All rights reserved."
+  }
+}

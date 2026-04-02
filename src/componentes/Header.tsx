@@ -1,187 +1,164 @@
-import { useState } from "react";
-import { Menu, ChevronDown, X, Instagram, MessageCircle } from "lucide-react";
+// src/componentes/Header.jsx
+import React, { useState } from "react";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import { Menu, ChevronDown, X } from "lucide-react";
+import { useLanguage } from "../context/useLanguage";
 
-// Constantes que não mudam podem ficar fora (boa prática)
-const languages = [
-  { code: "EN", label: "English", flag: "🇺🇸" },
-  { code: "PT-PT", label: "Português (PT)", flag: "🇵🇹" },
-  { code: "PT-BR", label: "Português (BR)", flag: "🇧🇷" },
-  { code: "ES", label: "Español", flag: "🇪🇸" },
-];
-
-const menuItems = ["Sobre", "Alisamentos", "Serviços", "Agendamento"];
+const logoNome = new URL("../assets/icones/1.png", import.meta.url).href;
+const whatsappLink = "https://wa.me/351914094354";
 
 const Header = () => {
-  // TODOS os hooks devem ficar aqui dentro, no início da função
   const [isOpen, setIsOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState("PT-BR");
+  const { currentLang, setCurrentLang, languages, t } = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleMenuItemClick = (itemId: string) => {
+    setIsOpen(false);
+    if (itemId === "agendamento") {
+      window.open(whatsappLink, "_blank");
+      return;
+    }
+    if (location.pathname !== "/") {
+      navigate(`/#${itemId}`);
+    } else {
+      const element = document.getElementById(itemId);
+      if (element) element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
       <header className="w-full bg-white border-b border-gray-100 sticky top-0 z-50 px-4 md:px-10">
         <div className="max-w-[1440px] mx-auto h-24 flex items-center justify-between">
-          {/* Esquerda: Menu */}
+          {/* Lado Esquerdo */}
           <div className="flex items-center gap-8 flex-1">
             <button
               onClick={() => setIsOpen(true)}
-              className="flex items-center gap-2 group cursor-pointer border-none bg-transparent"
+              className="flex items-center gap-2 group cursor-pointer"
             >
               <Menu
-                className="w-6 h-6 text-gray-800 group-hover:text-brand transition-colors"
+                className="w-6 h-6 text-gray-800 group-hover:text-brand"
                 strokeWidth={1.5}
               />
-              <span className="hidden sm:inline text-[11px] tracking-[3px] uppercase font-light">
-                Menu
+              <span className="hidden sm:inline text-[11px] tracking-[3px] uppercase">
+                {t.header.menuButton}
               </span>
             </button>
-
             <nav className="hidden lg:block">
-              <ul className="flex gap-8 text-[13px] tracking-widest uppercase font-light text-gray-700">
-                <li className="hover:text-brand cursor-pointer transition-colors">
-                  Técnicas
+              <ul className="flex gap-8 text-[13px] tracking-widest uppercase font-light">
+                <li>
+                  <button
+                    onClick={() => handleMenuItemClick("alisamentos")}
+                    className="hover:text-brand cursor-pointer"
+                  >
+                    {t.header.topNavTechniques}
+                  </button>
                 </li>
-                <li className="hover:text-brand cursor-pointer transition-colors">
-                  Contato
+                <li>
+                  <button
+                    onClick={() => handleMenuItemClick("contato")}
+                    className="hover:text-brand cursor-pointer"
+                  >
+                    {t.header.topNavContact}
+                  </button>
                 </li>
               </ul>
             </nav>
           </div>
 
-          {/* Centro: Logo */}
-          <div className="flex-1 flex justify-center">
-            <div className="text-center leading-none">
-              <h1 className="text-3xl md:text-4xl font-serif tracking-tight text-brand-dark leading-none">
-                Elaine
-              </h1>
-              <h1 className="text-3xl md:text-4xl font-serif tracking-tight text-brand-dark leading-none ml-6">
-                Paiva
-              </h1>
-            </div>
+          {/* Logo Central (SEO: h1 apenas na Home) */}
+          <div className="absolute left-1/2 -translate-x-1/2">
+            <Link to="/" className="flex items-center gap-2">
+              <img
+                src={logoNome}
+                alt="Elaine Paiva"
+                className="w-16 h-auto object-contain"
+              />
+              <div className="hidden md:block">
+                <span className="text-2xl font-serif text-brand-dark block leading-none">
+                  Elaine
+                </span>
+                <span className="text-2xl font-serif text-brand-dark block leading-none ml-4">
+                  Paiva
+                </span>
+              </div>
+            </Link>
           </div>
 
-          {/* Direita: Redes + Idioma */}
-          <div className="flex items-center justify-end gap-2 md:gap-5 flex-1">
-            <a
-              href="#"
-              className="hidden md:inline-flex text-gray-800 hover:text-brand transition-colors"
-            >
-              <Instagram className="w-5 h-5" strokeWidth={1.5} />
-            </a>
-            <a
-              href="#"
-              className="hidden md:inline-flex text-gray-800 hover:text-brand transition-colors"
-            >
-              <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
-            </a>
-
-            {/* Seletor de Idioma */}
+          {/* Lado Direito / Seletor */}
+          <div className="flex items-center justify-end gap-5 flex-1">
             <div className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-2 text-[11px] tracking-[2px] uppercase font-light text-gray-700 cursor-pointer ml-2 hover:text-brand transition-colors outline-none bg-transparent border-none"
+                className="flex items-center gap-2 text-[11px] tracking-[2px] uppercase cursor-pointer"
               >
-                {/* Aqui pegamos a flag do idioma atual */}
-                <span className="text-base">
+                <span className="text-lg">
                   {languages.find((l) => l.code === currentLang)?.flag}
                 </span>
-                {currentLang}
-                <ChevronDown
-                  className={`w-3 h-3 transition-transform ${langOpen ? "rotate-180" : ""}`}
-                />
+                {currentLang} <ChevronDown className="w-3 h-3" />
               </button>
               {langOpen && (
-                <>
-                  <div
-                    className="fixed inset-0 z-10"
-                    onClick={() => setLangOpen(false)}
-                  ></div>
-                  <ul className="absolute right-0 mt-4 w-40 bg-white border border-gray-100 shadow-xl z-20">
-                    {languages.map((lang) => (
-                      <li
-                        key={lang.code}
-                        onClick={() => {
-                          setCurrentLang(lang.code);
-                          setLangOpen(false);
-                        }}
-                        className="px-4 py-3 text-[10px] tracking-widest uppercase text-gray-600 hover:bg-brand-light/20 hover:text-brand cursor-pointer transition-colors border-b border-gray-50 last:border-none flex items-center gap-3"
-                      >
-                        <span className="text-base">{lang.flag}</span>
-                        {lang.label}
-                      </li>
-                    ))}
-                  </ul>
-                </>
+                <ul className="absolute right-0 mt-4 w-40 bg-white shadow-xl z-[60] border border-gray-100">
+                  {languages.map((lang) => (
+                    <li
+                      key={lang.code}
+                      onClick={() => {
+                        setCurrentLang(lang.code);
+                        setLangOpen(false);
+                      }}
+                      className="px-4 py-3 text-[10px] hover:bg-gray-50 cursor-pointer flex items-center gap-2"
+                    >
+                      <span>{lang.flag}</span> {lang.label}
+                    </li>
+                  ))}
+                </ul>
               )}
             </div>
           </div>
         </div>
       </header>
 
-      {/* Menu Lateral (Drawer) */}
-      <div
-        className={`fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm transition-opacity duration-300 ${
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-        onClick={() => setIsOpen(false)}
-      >
-        <div
-          className={`fixed top-0 left-0 w-full sm:w-80 h-full bg-white shadow-2xl transition-transform duration-500 ease-in-out ${
-            isOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="p-8">
-            <div className="flex justify-between items-center mb-16">
-              <span className="text-[11px] tracking-[4px] uppercase font-light text-gray-400">
-                Navegação
-              </span>
+      {isOpen && (
+        <div className="fixed inset-0 z-60">
+          <div
+            className="absolute inset-0 bg-black/40"
+            onClick={() => setIsOpen(false)}
+          />
+
+          <aside className="fixed left-0 top-0 h-full w-72 bg-white shadow-xl p-6">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-lg font-semibold">
+                {t?.header.drawerTitle || "Menu"}
+              </h3>
               <button
                 onClick={() => setIsOpen(false)}
-                className="cursor-pointer"
+                aria-label="Fechar menu"
+                className="p-2"
               >
-                <X className="w-6 h-6 text-gray-800" strokeWidth={1} />
+                <X className="w-5 h-5" />
               </button>
             </div>
 
-            <ul className="flex flex-col gap-8">
-              {menuItems.map((item, index) => (
-                <li key={item} className="group overflow-hidden">
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    className="text-3xl font-serif text-brand-dark hover:text-brand transition-colors flex items-center gap-4"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <span className="text-[10px] font-sans font-light text-brand opacity-0 group-hover:opacity-100 transition-opacity">
-                      0{index + 1}
-                    </span>
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-12 pt-8 border-t border-gray-100 flex items-center gap-6 md:hidden">
-              <a
-                href="#"
-                className="text-gray-800 hover:text-brand transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" strokeWidth={1.5} />
-              </a>
-              <a
-                href="#"
-                className="text-gray-800 hover:text-brand transition-colors"
-                aria-label="WhatsApp"
-              >
-                <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
-              </a>
-            </div>
-          </div>
+            <nav>
+              <ul className="flex flex-col gap-4">
+                {t?.header?.menuItems?.map((item: any) => (
+                  <li key={item.id}>
+                    <button
+                      onClick={() => handleMenuItemClick(item.id)}
+                      className="text-base uppercase tracking-widest font-medium"
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </aside>
         </div>
-      </div>
+      )}
     </>
   );
 };
-
 export default Header;

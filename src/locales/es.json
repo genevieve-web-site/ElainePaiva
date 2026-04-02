@@ -1,0 +1,110 @@
+{
+  "header": {
+    "menuButton": "Menú",
+    "topNavTechniques": "Técnicas",
+    "topNavContact": "Contacto",
+    "drawerTitle": "Navegación",
+    "menuItems": [
+      { "id": "sobre", "label": "Sobre" },
+      { "id": "alisamentos", "label": "Alisados" },
+      { "id": "agendamento", "label": "Reserva" }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Luxury Hair & Care",
+    "titleLine": "El Efecto",
+    "titleHighlight": "espejo",
+    "description": "Alisados profesionales que alinean la fibra capilar, eliminan el frizz y aportan brillo intenso sin comprometer la salud del cabello.",
+    "cta": "Hablar con Elaine",
+    "imageAlt": "Trabajo de Alisado",
+    "collectionLabel": "Editorial Collection 2026"
+  },
+  "latest": {
+    "titleStart": "Resultados",
+    "titleHighlight": "recientes",
+    "viewAll": "Ver todos",
+    "articles": [
+      {
+        "category": "Alisados",
+        "title": "El secreto del brillo espejo: técnica espejo"
+      },
+      {
+        "category": "Cuidados",
+        "title": "Cronograma capilar para cabellos químicamente tratados"
+      },
+      {
+        "category": "Productos",
+        "title": "Top 5 productos para mantener el alisado en casa"
+      }
+    ],
+    "bookingTitle": "Agenda tu cita",
+    "bookingHighlight": "Ahora",
+    "bookingSubtitle": "Experiencia exclusiva • Atención personalizada • Brillo espejo",
+    "bookingCta": "Hablar con Elaine por WhatsApp",
+    "bookingResponse": "Respuesta inmediata en horario comercial"
+  },
+  "blog": {
+    "readArticle": "Leer más",
+    "posts": [
+      {
+        "category": "Noticia principal",
+        "title": "Elaine es noticia en Brasil y gana premio en Europa."
+      },
+      {
+        "category": "Reconocimiento • Premio",
+        "title": "Especialista en Alisados: Elaine Paiva gana premio con más del 40% de los votos."
+      },
+      {
+        "category": "Expansión en Europa",
+        "title": "Formaciones Internacionales: La técnica del Liso Espejo llega a Luxemburgo, Francia y Bélgica."
+      },
+      {
+        "category": "El Método Técnico",
+        "title": "Liso Espejo: El secreto detrás del brillo intenso y la salud capilar."
+      }
+    ]
+  },
+  "alisamentos": {
+    "sectionTitle": "ALISADOS",
+    "prevLabel": "Anterior",
+    "nextLabel": "Siguiente"
+  },
+  "about": {
+    "imageAlt": "Perfil Elaine Paiva",
+    "category": "sobre Elaine",
+    "title": "LA ESPECIALISTA DETRÁS DE LOS LISOS PERFECTOS",
+    "description": "Con años de experiencia en el universo de la belleza, Elaine Paiva se convirtió en referencia en alisados que combinan resultado y salud capilar. Al frente del Dlux Salón, desarrolló un método enfocado en...",
+    "continueReading": "Seguir leyendo",
+    "pageTitle": "Sobre Elaine Paiva",
+    "pageIntro": "¡Bienvenido a la página sobre! Aquí conocerás más sobre la historia, la experiencia y la pasión de Elaine Paiva por el cuidado capilar.",
+    "storyTitle": "Nuestra Historia",
+    "storyParagraph1": "Con más de una década de experiencia en tratamientos capilares profesionales, Elaine Paiva dedicó su carrera a la transformación y el cuidado del cabello, utilizando técnicas modernas y productos de alta calidad.",
+    "storyParagraph2": "Nuestra misión es ofrecer a nuestros clientes no solo un cabello más bonito, sino también más saludable y resistente.",
+    "specialtiesTitle": "Especialidades",
+    "specialty1": "Alisados profesionales con efecto espejo",
+    "specialty2": "Cronograma capilar personalizado",
+    "specialty3": "Tratamientos de reconstrucción capilar",
+    "specialty4": "Asesoría de cuidados en casa",
+    "valuesTitle": "Valores",
+    "valuesText": "Creemos que cada tipo de cabello es único y merece atención personalizada. Estamos comprometidos con la excelencia, la innovación y el bienestar de nuestros clientes, utilizando siempre productos seguros y técnicas aprobadas.",
+    "ctaTitle": "Agenda tu Consulta",
+    "ctaText": "¿Quieres conocer mejor nuestros servicios? ¡Ponte en contacto con nosotros y agenda una consulta personalizada!",
+    "ctaButton": "Contáctanos por WhatsApp"
+  },
+  "insta": {
+    "title": "Instagram",
+    "viewAllVideos": "Ver todos los videos",
+    "videoTag": "Vídeo",
+    "videos": [
+      "EPISODIO 12: TOUR POR EL CUARTO DEL BEBÉ COELHO",
+      "EPISODIO 11: MADRES QUE INSPIRAN",
+      "EPISODIO 10: HABLANDO SOBRE EL PASADO, EL PRESENTE Y EL FUTURO."
+    ]
+  },
+  "footer": {
+    "address": "Rua de Costa Cabral 151 Porto Portugal",
+    "phone": "+351 912 345 678",
+    "rightsOwner": "Genevieve",
+    "rightsText": "Todos los derechos reservados."
+  }
+}

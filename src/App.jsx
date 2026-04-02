@@ -1,24 +1,22 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./componentes/Header";
-import Hero from "./componentes/Hero";
-import Latest from "./componentes/LatestArticles";
-import Blog from "./componentes/Blog";
-import Alisamentos from "./componentes/Alisamentos";
-import About from "./componentes/About";
-import Insta from "./componentes/insta";
 import Footer from "./componentes/Footer";
+import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <Latest />
-      <Blog />
-      <Alisamentos />
-      <About />
-      <Insta />
-      <Footer />
-    </>
+    <Router>
+      <LanguageProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+        <Footer />
+      </LanguageProvider>
+    </Router>
   );
 }
 

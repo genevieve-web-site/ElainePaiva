@@ -5,8 +5,8 @@ export default {
     extend: {
       colors: {
         brand: {
-          light: "#E8D9C5", // Bege claro
-          DEFAULT: "#B09980", // Bege médio
+          light: "#ede0cf", // Bege claro
+          DEFAULT: "#a69176", // Bege médio
           dark: "#1A1A1A", // Fundo escuro
         },
       },
