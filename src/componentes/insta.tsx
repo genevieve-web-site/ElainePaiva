@@ -61,6 +61,13 @@ const InstaSection = () => {
                   muted
                   loop
                   playsInline
+                  preload="auto"
+                  onCanPlay={(e) => {
+                    const el = e.currentTarget;
+                    if (el.paused) {
+                      void el.play().catch(() => {});
+                    }
+                  }}
                   className="w-full h-[300px] object-cover transition-all duration-500 group-hover:scale-105"
                 />
 

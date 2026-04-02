@@ -43,7 +43,6 @@ const blogPosts = [
 const BlogSection = () => {
   const { t } = useLanguage();
   const scrollRef = useRef<HTMLDivElement>(null);
-  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
   const scroll = (direction: "left" | "right") => {
     const { current } = scrollRef;
@@ -72,25 +71,10 @@ const BlogSection = () => {
 
         <div
           ref={scrollRef}
-          className="flex gap-8 overflow-x-hidden snap-x [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex gap-8 overflow-x-auto scrollbar-hide snap-x snap-mandatory touch-pan-x scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden [-webkit-overflow-scrolling:touch]"
           onWheel={(e) => {
             // bloqueia rolagem horizontal via roda/trackpad, permite vertical
             if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-              e.preventDefault();
-              e.stopPropagation();
-            }
-          }}
-          onTouchStart={(e) => {
-            const t = e.touches[0];
-            touchStartRef.current = { x: t.clientX, y: t.clientY };
-          }}
-          onTouchMove={(e) => {
-            if (!touchStartRef.current) return;
-            const t = e.touches[0];
-            const dx = t.clientX - touchStartRef.current.x;
-            const dy = t.clientY - touchStartRef.current.y;
-            // se o gesto for mais horizontal que vertical, previne
-            if (Math.abs(dx) > Math.abs(dy)) {
               e.preventDefault();
               e.stopPropagation();
             }

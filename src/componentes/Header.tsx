@@ -16,6 +16,10 @@ const Header = () => {
 
   const handleMenuItemClick = (itemId: string) => {
     setIsOpen(false);
+    if (itemId === "sobre") {
+      navigate("/about");
+      return;
+    }
     if (itemId === "agendamento") {
       window.open(whatsappLink, "_blank");
       return;

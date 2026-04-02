@@ -137,6 +137,13 @@ const LatestArticles = () => {
                   muted
                   loop
                   playsInline
+                  preload="auto"
+                  onCanPlay={(e) => {
+                    const el = e.currentTarget;
+                    if (el.paused) {
+                      void el.play().catch(() => {});
+                    }
+                  }}
                 />
               </div>
 
@@ -153,7 +160,7 @@ const LatestArticles = () => {
         <div className="mt-16 bg-[#E8D9C5]  border border-white/10 py-12 px-6 text-center rounded-sm">
           <div className="max-w-2xl mx-auto space-y-8 text-center">
             <div className="space-y-3 flex flex-col items-center">
-              <h3 className="text-4xl md:text-4xl font-serif text-black tracking-tight text-center pl-12 md:pl-12">
+              <h3 className="text-4xl md:text-4xl font-serif text-black tracking-tight text-center pl-0 md:pl-12">
                 {t.latest.bookingTitle}{" "}
                 <span className="italic font-light text-brand-light font-serif">
                   {t.latest.bookingHighlight}
